@@ -6,6 +6,9 @@ const theme = {
     body: "normal",
     bold: 700,
   },
+  breakpoints: [
+    '640px', '768px',
+  ],
   fontSizes: [12, 14],
   colors: {
     background: "#fff",
@@ -41,6 +44,8 @@ const theme = {
         bg: "hover",
         cursor: "pointer"
       },
+      width: '100%',
+      outline: 0,
     },
   },
   styles: {

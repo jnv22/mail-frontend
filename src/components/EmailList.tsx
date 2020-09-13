@@ -1,9 +1,9 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import React, { useReducer, useEffect } from "react";
+import React, { useReducer, useEffect, useState } from "react";
 import Moment from "moment";
 
-import { Grid, Flex, Text, Badge } from "theme-ui";
+import { Grid, Flex, Text, Badge, Button } from "theme-ui";
 import Checkbox from "./Checkbox";
 
 type Messages = {
@@ -21,51 +21,76 @@ export interface EmailListProps {
   };
 }
 
-const TAG_COLORS = {
-  TRAVEL: "blue",
-  WORK: "green",
-};
-
 const EmailList: React.FC<EmailListProps> = ({ data: { messages } }) => {
-  const checkedItemsReducer = (state, action) => {
-    console.log(action);
+
+  interface State {
+    [key: string]: boolean;
+  }
+
+  interface Action {
+    payload: string;
+    type: string;
+  }
+
+  const checkedItemsReducer = (state: State, action: Action)=> {
     switch (action.type) {
       case "toggle":
         const currentCheckedState = state[action.payload];
         return { ...state, [action.payload]: !currentCheckedState };
       case "create":
         return { ...state, [action.payload]: false };
+      // TODO:  Support ability to check/uncheck all items
       case "checkAll":
         return { ...state };
       case "uncheckAll":
         return { ...state };
       default:
-        throw new Error();
+        return { ...state };
     }
   };
+
+  const [ emailData, setEmailData] = useState<Messages[] | null>(null);
 
   const [checkedItems, dispatchSetCheckedItems] = useReducer(
     checkedItemsReducer,
     {}
   );
 
+  useEffect(() => {
+    setEmailData(messages);
+  }, [messages])
+
   useEffect(
-    () =>
-      messages.forEach(
-        ({ id }) => dispatchSetCheckedItems({ type: "create", payload: id }),
-        [messages]
-      ),
-    [messages]
+    () => {
+      if (emailData) {
+        emailData.forEach(
+          ({ id }) => dispatchSetCheckedItems({ type: "create", payload: id })
+        )
+      }
+    },
+    [emailData]
   );
 
-  console.log(checkedItems);
   return (
+    <div>
+    <Button 
+      onClick={() => {
+        let prefilteredData = emailData;
+        for (const checkedItem in checkedItems) {
+          if (checkedItems[checkedItem] && prefilteredData) {
+            prefilteredData = prefilteredData.filter(({id}) => checkedItem !== id);
+          }
+        }
+      setEmailData(prefilteredData);
+      }}>
+      Delete
+    </Button>
     <ul
       sx={{
         padding: 0,
       }}
     >
-      {messages.map(({ id, subject, sender, body, tags, date }) => (
+      {emailData && emailData.map(({ id, subject, sender, body, tags, date }) => (
         <li
           key={id}
           sx={{
@@ -93,11 +118,16 @@ const EmailList: React.FC<EmailListProps> = ({ data: { messages } }) => {
             <Grid
               columns={[1, 4]}
               sx={{
-                flex: "1 1 530px",
+                flex: ["1 1 370px", "1 1 590px"],
                 justifyItems: "left",
               }}
             >
-              <Text variant="list.new">{sender}</Text>
+              <Text 
+              variant="list.new"
+              sx={{
+                wordBreak: 'break-word'
+              }}
+              >{sender}</Text>
               <Text variant="list.new">{subject}-</Text>
               <Text
                 variant="list.new"
@@ -138,6 +168,7 @@ const EmailList: React.FC<EmailListProps> = ({ data: { messages } }) => {
               sx={{
                 flex: 1,
               }}
+              mr={0}
             >
               {Moment(date).format("MMM D")}
             </Text>
@@ -145,6 +176,7 @@ const EmailList: React.FC<EmailListProps> = ({ data: { messages } }) => {
         </li>
       ))}
     </ul>
+    </div>
   );
 };
 

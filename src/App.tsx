@@ -3,9 +3,9 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
-  useParams,
 } from "react-router-dom";
+import { ThemeProvider } from "theme-ui";
+import theme from "./theme";
 
 import Home from "./pages/Home";
 
@@ -13,7 +13,7 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="App">
+    <ThemeProvider theme={theme}>
       <Router>
         <div>
           <Switch>
@@ -22,7 +22,7 @@ function App() {
           </Switch>
         </div>
       </Router>
-    </div>
+    </ThemeProvider>
   );
 }
 

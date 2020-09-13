@@ -36,6 +36,7 @@ const Navigation: React.FC<NavigationProps> = ({ data: { messages }}) => {
   }
   }, [messages]);
 
+
   return (
   <Box
     p={4}
@@ -46,6 +47,7 @@ const Navigation: React.FC<NavigationProps> = ({ data: { messages }}) => {
           margin: 0,
           '& > li': {
             listStyle: "none",
+            textAlign: 'center'
           }
         }}
       >
