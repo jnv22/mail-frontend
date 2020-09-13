@@ -52,7 +52,17 @@
     "@storybook/preset-create-react-app": "^3.1.4",
     "@storybook/react": "^6.0.21",
     "babel-loader": "^8.1.0",
+    "husky": ">=4",
+    "lint-staged": ">=10",
     "prettier": "2.1.1",
     "react-is": "^16.13.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,css,md}": "prettier --write"
   }
 }
