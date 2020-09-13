@@ -73,7 +73,11 @@ const EmailList: React.FC<EmailListProps> = ({ data: { messages } }) => {
             listStyle: "none",
           }}
         >
-          <Flex>
+          <Flex
+            sx={{
+              alignItems: 'center'
+            }}
+          >
             <div
               sx={{
                 flex: 1,
@@ -89,8 +93,8 @@ const EmailList: React.FC<EmailListProps> = ({ data: { messages } }) => {
             <Grid
               columns={[1, 4]}
               sx={{
-                flex: "1 1 560px",
-                justifyItems: "center",
+                flex: "1 1 530px",
+                justifyItems: "left",
               }}
             >
               <Text variant="list.new">{sender}</Text>
@@ -111,26 +115,23 @@ const EmailList: React.FC<EmailListProps> = ({ data: { messages } }) => {
                   },
                 }}
               ></Text>
-              <Text
-                variant="list.new"
+              <div
                 sx={{
                   flex: 1,
+
                 }}
               >
                 {tags.map((tag) => {
                   return (
-                    <Badge
-                      bg={
-                        TAG_COLORS[tag.toUpperCase()]
-                          ? TAG_COLORS[tag.toUpperCase()]
-                          : "black"
-                      }
-                    >
-                      {tag}
-                    </Badge>
+                      <Badge
+                        mr={0}
+                        bg={`${tag.toLowerCase()}`}
+                      >
+                        {tag}
+                      </Badge>
                   );
                 })}
-              </Text>
+              </div>
             </Grid>
             <Text
               variant="list.new"
@@ -138,7 +139,7 @@ const EmailList: React.FC<EmailListProps> = ({ data: { messages } }) => {
                 flex: 1,
               }}
             >
-              {Moment(date).format("MMM, D")}
+              {Moment(date).format("MMM D")}
             </Text>
           </Flex>
         </li>

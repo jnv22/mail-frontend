@@ -12,8 +12,11 @@ const theme = {
     primary: "#202124",
     secondary: "#5f6368",
     hover: "#e8eaed",
+    //define tab colors here:
+    work: 'green',
+    travel: 'blue'
   },
-  space: [10, 14, 32],
+  space: [5, 10, 14],
   text: {
     default: {
       fontFamily: "body",
@@ -36,6 +39,7 @@ const theme = {
       bg: "background",
       "&:hover": {
         bg: "hover",
+        cursor: "pointer"
       },
     },
   },
