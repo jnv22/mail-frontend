@@ -4,6 +4,6 @@ import App from "./App";
 
 test("Renders Delete Element", () => {
   render(<App />);
-  const DeleteElement = screen.getByText('Delete');
+  const DeleteElement = screen.getByText("Delete");
   expect(DeleteElement).toBeInTheDocument();
 });

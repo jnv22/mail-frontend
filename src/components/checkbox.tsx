@@ -10,10 +10,7 @@ export interface CheckboxProps {
 const Checkbox: React.FC<CheckboxProps> = ({ checked, onChange }) => {
   return (
     <Label>
-      <CheckboxComponent 
-        checked={checked} 
-        onChange={onChange} 
-      />
+      <CheckboxComponent checked={checked} onChange={onChange} />
     </Label>
   );
 };

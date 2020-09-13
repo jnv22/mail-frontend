@@ -6,9 +6,7 @@ const theme = {
     body: "normal",
     bold: 700,
   },
-  breakpoints: [
-    '640px', '768px',
-  ],
+  breakpoints: ["640px", "768px"],
   fontSizes: [12, 14],
   colors: {
     background: "#fff",
@@ -16,8 +14,8 @@ const theme = {
     secondary: "#5f6368",
     hover: "#e8eaed",
     //define tab colors here:
-    work: 'green',
-    travel: 'blue'
+    work: "green",
+    travel: "blue",
   },
   space: [5, 10, 14],
   text: {
@@ -42,9 +40,9 @@ const theme = {
       bg: "background",
       "&:hover": {
         bg: "hover",
-        cursor: "pointer"
+        cursor: "pointer",
       },
-      width: '100%',
+      width: "100%",
       outline: 0,
     },
   },
