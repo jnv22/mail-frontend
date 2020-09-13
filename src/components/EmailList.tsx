@@ -2,6 +2,7 @@
 import { jsx } from "theme-ui";
 import React, { useReducer, useEffect, useState } from "react";
 import Moment from "moment";
+import { v4 as uuidv4 } from 'uuid';
 
 import { Grid, Flex, Text, Badge, Button } from "theme-ui";
 import Checkbox from "./Checkbox";
@@ -128,7 +129,7 @@ const EmailList: React.FC<EmailListProps> = ({ data: { messages } }) => {
                 wordBreak: 'break-word'
               }}
               >{sender}</Text>
-              <Text variant="list.new">{subject}-</Text>
+              <Text variant="list.new">{subject}</Text>
               <Text
                 variant="list.new"
                 dangerouslySetInnerHTML={{
@@ -156,6 +157,7 @@ const EmailList: React.FC<EmailListProps> = ({ data: { messages } }) => {
                       <Badge
                         mr={0}
                         bg={`${tag.toLowerCase()}`}
+                        key={uuidv4()}
                       >
                         {tag}
                       </Badge>
