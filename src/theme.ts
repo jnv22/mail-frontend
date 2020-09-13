@@ -21,6 +21,7 @@ const theme = {
     },
     list: {
       new: {
+        listDecoration: 'none',
         fontWeight: 'bold',
         fontSize: 1,
       },
@@ -49,6 +50,9 @@ const theme = {
       color: '#313131',
       fontWeight: 600,
     },
+    checkbox: {
+      color: 'secondary',
+    }
   },
 };
 

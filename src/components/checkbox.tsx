@@ -4,16 +4,16 @@ import { Label, Checkbox as CheckboxComponent } from 'theme-ui'
 
 
 export interface CheckboxProps {
-  value: string | number;
   checked: boolean;
   onChange: () => void;
 }
 
-const Checkbox: React.FC<CheckboxProps> = ({ value, checked, onChange }) => {
+const Checkbox: React.FC<CheckboxProps> = ({ checked, onChange }) => {
   return (
     <Label>
       <CheckboxComponent
-        defaultChecked={true}
+        checked={checked}
+        onChange={onChange}
       />
     </Label>
   )
