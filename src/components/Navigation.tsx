@@ -4,13 +4,13 @@ import React, { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 import { Box, Text, Badge, Button } from "theme-ui";
-import { Messages } from './EmailList';
+import { Messages } from "./EmailList";
 
 export interface NavigationProps {
   data: {
     messages: Messages[];
   };
-};
+}
 
 const Navigation: React.FC<NavigationProps> = ({ data: { messages } }) => {
   const [uniqueTags, setUniqueTags] = useState<string[]>([]);

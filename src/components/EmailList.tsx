@@ -3,9 +3,8 @@ import { jsx } from "theme-ui";
 import React, { useReducer, useEffect, useState } from "react";
 import Moment from "moment";
 import { v4 as uuidv4 } from "uuid";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 import { Grid, Flex, Text, Badge, Button, Heading } from "theme-ui";
 import Checkbox from "./Checkbox";
@@ -17,7 +16,7 @@ export interface Messages {
   body: string;
   tags: string[];
   date: string;
-};
+}
 
 export interface EmailListProps {
   data: {
@@ -28,12 +27,12 @@ export interface EmailListProps {
 const EmailList: React.FC<EmailListProps> = ({ data: { messages } }) => {
   type State = {
     [key: string]: boolean;
-  }
+  };
 
   type Action = {
     payload: string;
     type: string;
-  }
+  };
 
   const checkedItemsReducer = (state: State, action: Action): State => {
     switch (action.type) {
@@ -89,7 +88,11 @@ const EmailList: React.FC<EmailListProps> = ({ data: { messages } }) => {
           width: "30px",
         }}
       >
-        <FontAwesomeIcon icon={faTrash} aria-label="Delete Mail" title="delete"/>
+        <FontAwesomeIcon
+          icon={faTrash}
+          aria-label="Delete Mail"
+          title="delete"
+        />
       </Button>
       <ul
         sx={{
@@ -176,7 +179,7 @@ const EmailList: React.FC<EmailListProps> = ({ data: { messages } }) => {
                   variant="list.new"
                   sx={{
                     flex: 1,
-                    textAlign: 'right'
+                    textAlign: "right",
                   }}
                   ml={0}
                   mr={1}

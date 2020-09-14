@@ -27,8 +27,7 @@ const Home: React.FC<{}> = () => {
       />
       <Flex>
         {showNavigation && (
-          <div
-          >
+          <div>
             <Navigation data={data} />
           </div>
         )}
@@ -39,9 +38,7 @@ const Home: React.FC<{}> = () => {
             ml: 1,
           }}
         >
-          <EmailList
-            data={data}
-          />
+          <EmailList data={data} />
         </div>
       </Flex>
     </Flex>
