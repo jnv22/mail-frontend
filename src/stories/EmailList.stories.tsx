@@ -7,9 +7,7 @@ import data from "../data/emails.json";
 
 export default {
   title: "Mail/List",
-  argTypes: {
-    backgroundColor: { control: "color" },
-  },
+  component: EmailList,
 } as Meta;
 
 const Template: Story<EmailListProps> = (args) => <EmailList {...args} />;

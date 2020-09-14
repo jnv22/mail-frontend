@@ -6,7 +6,7 @@ const theme = {
     body: "normal",
     bold: 700,
   },
-  breakpoints: ["640px", "768px"],
+  breakpoints: ["576px", "768px", "992px", "1200px"],
   fontSizes: [12, 14],
   colors: {
     background: "#fff",

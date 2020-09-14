@@ -3,11 +3,14 @@ import { jsx } from "theme-ui";
 import React, { useReducer, useEffect, useState } from "react";
 import Moment from "moment";
 import { v4 as uuidv4 } from "uuid";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
-import { Grid, Flex, Text, Badge, Button } from "theme-ui";
+
+import { Grid, Flex, Text, Badge, Button, Heading } from "theme-ui";
 import Checkbox from "./Checkbox";
 
-type Messages = {
+export interface Messages {
   id: string;
   subject: string;
   sender: string;
@@ -23,16 +26,16 @@ export interface EmailListProps {
 }
 
 const EmailList: React.FC<EmailListProps> = ({ data: { messages } }) => {
-  interface State {
+  type State = {
     [key: string]: boolean;
   }
 
-  interface Action {
+  type Action = {
     payload: string;
     type: string;
   }
 
-  const checkedItemsReducer = (state: State, action: Action) => {
+  const checkedItemsReducer = (state: State, action: Action): State => {
     switch (action.type) {
       case "toggle":
         const currentCheckedState = state[action.payload];
@@ -83,10 +86,10 @@ const EmailList: React.FC<EmailListProps> = ({ data: { messages } }) => {
           setEmailData(prefilteredData);
         }}
         sx={{
-          width: "10%",
+          width: "30px",
         }}
       >
-        Delete
+        <FontAwesomeIcon icon={faTrash} aria-label="Delete Mail" title="delete"/>
       </Button>
       <ul
         sx={{
@@ -122,7 +125,7 @@ const EmailList: React.FC<EmailListProps> = ({ data: { messages } }) => {
                 <Grid
                   columns={[1, 4]}
                   sx={{
-                    flex: ["1 1 370px", "1 1 590px"],
+                    flex: ["1 1 150px", "1 1 400px", "1 1 600px", "1 1 800px"],
                     justifyItems: "left",
                   }}
                 >
@@ -173,8 +176,10 @@ const EmailList: React.FC<EmailListProps> = ({ data: { messages } }) => {
                   variant="list.new"
                   sx={{
                     flex: 1,
+                    textAlign: 'right'
                   }}
-                  mr={0}
+                  ml={0}
+                  mr={1}
                 >
                   {Moment(date).format("MMM D")}
                 </Text>

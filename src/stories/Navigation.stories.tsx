@@ -6,10 +6,8 @@ import Navigation, { NavigationProps } from "../components/Navigation";
 import data from "../data/emails.json";
 
 export default {
-  title: "Navigation/List",
-  argTypes: {
-    backgroundColor: { control: "color" },
-  },
+  title: "Mail/Navigation",
+  component: Navigation,
 } as Meta;
 
 const Template: Story<NavigationProps> = (args) => <Navigation {...args} />;

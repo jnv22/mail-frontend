@@ -4,21 +4,13 @@ import React, { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 import { Box, Text, Badge, Button } from "theme-ui";
-
-type Messages = {
-  id: string;
-  subject: string;
-  sender: string;
-  body: string;
-  tags: string[];
-  date: string;
-};
+import { Messages } from './EmailList';
 
 export interface NavigationProps {
   data: {
     messages: Messages[];
   };
-}
+};
 
 const Navigation: React.FC<NavigationProps> = ({ data: { messages } }) => {
   const [uniqueTags, setUniqueTags] = useState<string[]>([]);
@@ -48,6 +40,7 @@ const Navigation: React.FC<NavigationProps> = ({ data: { messages } }) => {
           },
         }}
       >
+        {/* TODO: Make into links */}
         <li>
           <Button variant="primary">Inbox</Button>
         </li>

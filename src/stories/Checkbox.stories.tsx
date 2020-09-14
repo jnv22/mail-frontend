@@ -7,9 +7,6 @@ import Checkbox, { CheckboxProps } from "../components/Checkbox";
 export default {
   title: "Mail/Checkbox",
   component: Checkbox,
-  argTypes: {
-    backgroundColor: { control: "color" },
-  },
 } as Meta;
 
 const Template: Story<CheckboxProps> = (args) => <Checkbox {...args} />;

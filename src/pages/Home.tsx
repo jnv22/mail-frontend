@@ -22,14 +22,12 @@ const Home: React.FC<{}> = () => {
         sx={{
           width: "55px",
         }}
+        mb={0}
         onClick={() => setShowNavigation(!showNavigation)}
       />
       <Flex>
         {showNavigation && (
           <div
-            sx={{
-              flex: 0,
-            }}
           >
             <Navigation data={data} />
           </div>
@@ -38,13 +36,11 @@ const Home: React.FC<{}> = () => {
         <div
           sx={{
             flex: 1,
+            ml: 1,
           }}
         >
           <EmailList
             data={data}
-            sx={{
-              flex: 1,
-            }}
           />
         </div>
       </Flex>
