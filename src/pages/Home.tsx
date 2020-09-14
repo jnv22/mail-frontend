@@ -26,12 +26,7 @@ const Home: React.FC<{}> = () => {
         onClick={() => setShowNavigation(!showNavigation)}
       />
       <Flex>
-        {showNavigation && (
-          <div>
-            <Navigation data={data} />
-          </div>
-        )}
-
+        {showNavigation && <Navigation data={data} />}
         <div
           sx={{
             flex: 1,
