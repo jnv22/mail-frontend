@@ -6,7 +6,7 @@ import { v4 as uuidv4 } from "uuid";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
-import { Grid, Flex, Text, Badge, Button, Heading } from "theme-ui";
+import { Grid, Flex, Text, Badge, Button } from "theme-ui";
 import Checkbox from "./Checkbox";
 
 export interface Messages {
