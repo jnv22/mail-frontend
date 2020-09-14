@@ -1,22 +1,19 @@
 {
   "files": {
-    "main.css": "/mail-frontend/static/css/main.9900741b.chunk.css",
-    "main.js": "/mail-frontend/static/js/main.48f4248c.chunk.js",
-    "main.js.map": "/mail-frontend/static/js/main.48f4248c.chunk.js.map",
+    "main.js": "/mail-frontend/static/js/main.9787c292.chunk.js",
+    "main.js.map": "/mail-frontend/static/js/main.9787c292.chunk.js.map",
     "runtime-main.js": "/mail-frontend/static/js/runtime-main.1c766719.js",
     "runtime-main.js.map": "/mail-frontend/static/js/runtime-main.1c766719.js.map",
-    "static/js/2.28233fee.chunk.js": "/mail-frontend/static/js/2.28233fee.chunk.js",
-    "static/js/2.28233fee.chunk.js.map": "/mail-frontend/static/js/2.28233fee.chunk.js.map",
+    "static/js/2.f5f88296.chunk.js": "/mail-frontend/static/js/2.f5f88296.chunk.js",
+    "static/js/2.f5f88296.chunk.js.map": "/mail-frontend/static/js/2.f5f88296.chunk.js.map",
     "index.html": "/mail-frontend/index.html",
-    "precache-manifest.f86a06f9bef0d33b57e3a2b3bcfbff43.js": "/mail-frontend/precache-manifest.f86a06f9bef0d33b57e3a2b3bcfbff43.js",
+    "precache-manifest.289b60bc56935252ecef0fb46b0e8943.js": "/mail-frontend/precache-manifest.289b60bc56935252ecef0fb46b0e8943.js",
     "service-worker.js": "/mail-frontend/service-worker.js",
-    "static/css/main.9900741b.chunk.css.map": "/mail-frontend/static/css/main.9900741b.chunk.css.map",
-    "static/js/2.28233fee.chunk.js.LICENSE.txt": "/mail-frontend/static/js/2.28233fee.chunk.js.LICENSE.txt"
+    "static/js/2.f5f88296.chunk.js.LICENSE.txt": "/mail-frontend/static/js/2.f5f88296.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.1c766719.js",
-    "static/js/2.28233fee.chunk.js",
-    "static/css/main.9900741b.chunk.css",
-    "static/js/main.48f4248c.chunk.js"
+    "static/js/2.f5f88296.chunk.js",
+    "static/js/main.9787c292.chunk.js"
   ]
 }
